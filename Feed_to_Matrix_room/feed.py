@@ -4,6 +4,7 @@ import feedparser
 import pprint
 import pickle
 import time
+import os
 
 from matrix_client.api import MatrixHttpApi
 from matrix_client.api import MatrixRequestError
@@ -15,13 +16,18 @@ delta = 'entries.pickle'
 
 feed = feedparser.parse(url)
 
-with open(delta, 'rb') as f:
+if os.path.isfile(delta) is not True:
     entries = []
     for entry in feed.entries:
         entries.append(entry)
-    for ent in pickle.load(f):
-        if ent in entries:
-            entries.remove(ent)
+else:
+    with open(delta, 'rb') as f:
+        entries = []
+        for entry in feed.entries:
+            entries.append(entry)
+        for ent in pickle.load(f):
+            if ent in entries:
+                entries.remove(ent)
 
 with open(delta, 'wb') as f:
     ents = []
