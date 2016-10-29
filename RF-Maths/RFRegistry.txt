@@ -1,0 +1,5 @@
+# @context(impedence=50) radio = rf
+
+@context radio = rf
+    [length] <-> [frequency]: speed_of_light / value
+@end
