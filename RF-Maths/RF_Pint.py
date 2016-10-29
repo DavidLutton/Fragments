@@ -18,7 +18,7 @@ ureg.default_format = '~P'
 # ureg.default_format = '.3f'
 
 
-ureg.load_definitions('RFRegistry.txt')
+ureg.load_definitions('FrequencyRegistry.txt')
 
 with ureg.context('rf', impedence=50):
     q = (20 * ureg.cm)
