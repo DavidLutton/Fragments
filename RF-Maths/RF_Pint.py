@@ -64,14 +64,3 @@ with ureg.context('rf'):
     print(q.magnitude)
     res = (10 * np.log10(q.magnitude / 0.001)) * ureg.dBm
     print(res)
-
-'''
-    q = (18 * ureg.volt)
-    print(q.to('dBm'))
-
-    q = (32 * ureg.dBm)
-    print(q.to('W'))
-
-    q = (10 * ureg.watt)
-    print(q.to('dBm'))
-'''
