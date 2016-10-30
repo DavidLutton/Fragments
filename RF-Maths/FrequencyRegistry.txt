@@ -8,9 +8,13 @@ dBpV = []
 
 dBSPL = []
 
+impedence = ohm
+
 # @context(impedence=50)
 
 @context radio = rf = sound = optical
+
     [length] <-> [frequency]: speed_of_light / value
+    # [dBm] -> [dBW]: dBm - 30
 
 @end

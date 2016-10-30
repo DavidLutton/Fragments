@@ -20,7 +20,9 @@ ureg.default_format = '~P'
 
 ureg.load_definitions('FrequencyRegistry.txt')
 
-with ureg.context('rf', impedence=50):
+with ureg.context('rf'):
+    Z = (ureg.impedence * 50).to('ohm')
+
     q = (20 * ureg.cm)
     print(q.to('MHz'))
 
@@ -32,7 +34,8 @@ with ureg.context('rf', impedence=50):
 
     # q = (np.sqrt((50 * ureg.ohm) * (6.432 * ureg.watt)))
     # print(q.to('V'))
-    q = (((50 * ureg.ohm) * (6.432 * ureg.watt)) ** .5)
+
+    q = ((Z * (6.432 * ureg.watt)) ** .5)
     print(q)
     print(q.to('V'))
 
@@ -40,9 +43,15 @@ with ureg.context('rf', impedence=50):
     qa = (30 * ureg.dBm)
     qaq = q + qa
     print(qaq)
+    print(qaq.to('dBW'))
+
     q = (2 * ureg.dBW)
-    # print((ureg.impedence * 3).magnitude)
+    print(q)
+
+    print(Z.magnitude)
+    print(Z)
 '''
+
 
 
     q = (18 * ureg.volt)
