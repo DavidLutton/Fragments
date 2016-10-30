@@ -16,12 +16,12 @@ class LogConverter(Converter):
 ureg = UnitRegistry()
 ureg.default_format = '~P'
 # ureg.default_format = '.3f'
-
-
 ureg.load_definitions('FrequencyRegistry.txt')
 
 with ureg.context('rf'):
     Z = (ureg.impedence * 50).to('ohm')
+    print(Z.magnitude)
+    print(Z)
 
     q = (20 * ureg.cm)
     print(q.to('MHz'))
@@ -29,31 +29,19 @@ with ureg.context('rf'):
     q = (230 * ureg.MHz)
     print(q.to('cm'))
 
-    # Some of the wanted combinations
-    # W V dBm
-
-    # q = (np.sqrt((50 * ureg.ohm) * (6.432 * ureg.watt)))
-    # print(q.to('V'))
-
+    # Some of the wanted combinations W V dBm `/ 50Ω`
     q = ((Z * (6.432 * ureg.watt)) ** .5)
     print(q)
     print(q.to('V'))
 
-    q = (13 * ureg.dBm)
-    qa = (30 * ureg.dBm)
-    qaq = q + qa
-    print(qaq)
-    print(qaq.to('dBW'))
+    q = (13 * ureg.dBm) + (30 * ureg.dBm)
+    print(q)
+    print(q.to('dBW'))
 
-    q = (2 * ureg.dBW)
+    q = (2 * ureg.dBW)  # TODO use offset convertor for dBW = dBm - 30
     print(q)
 
-    print(Z.magnitude)
-    print(Z)
 '''
-
-
-
     q = (18 * ureg.volt)
     print(q.to('dBm'))
 
