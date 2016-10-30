@@ -27,14 +27,26 @@ with ureg.context('rf', impedence=50):
     q = (230 * ureg.MHz)
     print(q.to('cm'))
 
-'''
     # Some of the wanted combinations
     # W V dBm
+
+    # q = (np.sqrt((50 * ureg.ohm) * (6.432 * ureg.watt)))
+    # print(q.to('V'))
+    q = (((50 * ureg.ohm) * (6.432 * ureg.watt)) ** .5)
+    print(q)
+    print(q.to('V'))
+
+    q = (13 * ureg.dBm)
+    qa = (30 * ureg.dBm)
+    qaq = q + qa
+    print(qaq)
+    q = (2 * ureg.dBW)
+    # print((ureg.impedence * 3).magnitude)
+'''
+
+
     q = (18 * ureg.volt)
     print(q.to('dBm'))
-
-    q = (6 * ureg.watt)
-    print(q.to('V'))
 
     q = (32 * ureg.dBm)
     print(q.to('W'))
