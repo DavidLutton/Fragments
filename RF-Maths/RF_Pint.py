@@ -30,11 +30,13 @@ with ureg.context('rf'):
     print(q.to('cm'))
 
     print()
+    print("6.432W")
     q = ((Z * (6.432 * ureg.watt)) ** .5)  # ** .5) == square root
     print(q)
     print(q.to('V'))
 
     print()
+    print("18V")
     q = ((18 * ureg.volt) ** 2 / Z)
     print(q)
     print(q.to('W'))
@@ -59,6 +61,7 @@ with ureg.context('rf'):
     print(res)
 
     print()
+    print("18V")
     q = ((18 * ureg.volt) ** 2 / Z).to('W')
     print(q)
     print(q.magnitude)
