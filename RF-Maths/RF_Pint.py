@@ -22,6 +22,7 @@ with ureg.context('rf'):
     Z = (ureg.impedence * 50).to('ohm')
     print(Z.magnitude)
     print(Z)
+    print()
 
     q = (20 * ureg.cm)
     print(q.to('MHz'))
@@ -30,16 +31,26 @@ with ureg.context('rf'):
     print(q.to('cm'))
 
     # Some of the wanted combinations W V dBm `/ 50Ω`
+    print()
     q = ((Z * (6.432 * ureg.watt)) ** .5)
+    # ** .5) == square root
     print(q)
     print(q.to('V'))
 
+    print()
     q = (13 * ureg.dBm) + (30 * ureg.dBm)
     print(q)
     print(q.to('dBW'))
 
-    q = (2 * ureg.dBW)  # TODO use offset convertor for dBW = dBm - 30
+    print()
+    '''q = (32 * ureg.dBW) + (30 * ureg.dBW)
     print(q)
+    print(q.to('dBm'))
+    '''
+    '''print()
+    q = (2 * ureg.dBW)
+    print(q)
+    '''
 
 '''
     q = (18 * ureg.volt)

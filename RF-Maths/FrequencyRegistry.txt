@@ -1,5 +1,9 @@
-dBm = []
-dBW = []
+dBm = [] = dBm
+
+#dBm = [] = dBW; offset: -30 = dBm
+
+dBW = dBm; offset: 30 = dBW
+
 dBV = []
 dBu = []
 dBk = []
@@ -10,11 +14,8 @@ dBSPL = []
 
 impedence = ohm
 
-# @context(impedence=50)
+# @context(impedence=50) #
 
 @context radio = rf = sound = optical
-
     [length] <-> [frequency]: speed_of_light / value
-    # [dBm] -> [dBW]: dBm - 30
-
 @end
