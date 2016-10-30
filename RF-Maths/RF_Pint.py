@@ -15,7 +15,6 @@ class LogConverter(Converter):
 
 ureg = UnitRegistry()
 ureg.default_format = '~P'
-# ureg.default_format = '.3f'
 ureg.load_definitions('FrequencyRegistry.txt')
 
 with ureg.context('rf'):
@@ -31,9 +30,7 @@ with ureg.context('rf'):
     print(q.to('cm'))
 
     print()
-    # Some of the wanted combinations W V dBm `/ 50Ω`
-    q = ((Z * (6.432 * ureg.watt)) ** .5)
-    # ** .5) == square root
+    q = ((Z * (6.432 * ureg.watt)) ** .5)  # ** .5) == square root
     print(q)
     print(q.to('V'))
 
@@ -48,7 +45,6 @@ with ureg.context('rf'):
     print(q.to('dBW'))
 
     print()
-
     q = 20 * ureg.dBm
     print(q)
     print(q.magnitude)
@@ -61,14 +57,13 @@ with ureg.context('rf'):
     print(q.magnitude)
     res = (10 * np.log10(q.magnitude / 0.001)) * ureg.dBm
     print(res)
-    # q = (32 * ureg.dBW) + (30 * ureg.dBW)
-    # print(q)
-    # print(q.to('dBm'))
 
     print()
-    # q = (2 * ureg.dBW)
-    # print(q)
-
+    q = ((18 * ureg.volt) ** 2 / Z).to('W')
+    print(q)
+    print(q.magnitude)
+    res = (10 * np.log10(q.magnitude / 0.001)) * ureg.dBm
+    print(res)
 
 '''
     q = (18 * ureg.volt)
@@ -79,14 +74,4 @@ with ureg.context('rf'):
 
     q = (10 * ureg.watt)
     print(q.to('dBm'))
-
-    # just an offset from dBm  30dB
-    q = (18 * ureg.dBW)
-    print(q.to('W'))
-
-    q = (10 * ureg.watt)
-    print(q.to('dBW'))
-
-    q = (18 * ureg.volt)
-    print(q.to('dBW'))
 '''
