@@ -1,0 +1,64 @@
+# https://pip.readthedocs.org/en/1.1/requirements.html
+pip
+
+# URI # 
+requests
+youtube-dl
+feedparser
+matrix-client
+
+# Files #
+openpyxl
+pypdf2
+pandas
+
+# Hardware IO #
+
+pyserial; sys.platform == 'linux'
+pyserial==3.0.1; sys.platform == 'win32' # one case for an Win XP
+# python_version < '3.4.4'
+
+pyusb
+
+pyvisa
+pyvisa-py
+pyvisa-sim
+
+# Jupyter #
+jupyter
+jupyterlab
+
+# Maths #
+numpy
+sympy
+pytz
+# scipy lapack blas
+
+# Plots #
+matplotlib
+
+# UI Automation #
+pypiwin32; sys.platform == 'win32'
+comtypes; sys.platform == 'win32'
+xlwings; sys.platform == 'win32'
+
+# # #
+pydocstyle
+pep8
+
+autopep8
+
+pytest
+pytest-pep8
+pytest-flakes
+pytest-cov
+
+sphinx
+autodoc
+
+coverage
+
+# -r requirements-git.txt
+# Git #
+-e git+https://github.com/hgrecco/pint.git@master#egg=pint
+-e git+https://github.com/spacetelescope/asdf@master#egg=asdf
