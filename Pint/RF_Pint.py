@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import numpy as np
 from pint import UnitRegistry
 from pint.unit import UnitDefinition
@@ -18,7 +20,7 @@ ureg.default_format = '~P'
 ureg.load_definitions('FrequencyRegistry.txt')
 
 with ureg.context('rf'):
-    Z = (ureg.impedence * 50).to('ohm')
+    Z = (ureg.ohm * 50)
     print(Z.magnitude)
     print(Z)
     print()
@@ -44,7 +46,7 @@ with ureg.context('rf'):
     print()
     q = (13 * ureg.dBm) + (30 * ureg.dBm)
     print(q)
-    print(q.to('dBW'))
+    print(q.to('dBm'))
 
     print()
     q = 20 * ureg.dBm
