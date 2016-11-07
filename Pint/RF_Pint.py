@@ -22,6 +22,7 @@ ureg.load_definitions('FrequencyRegistry.txt')
 with ureg.context('rf'):
     Z = (ureg.ohm * 50)
     print(Z.magnitude)
+    print(Z.units)
     print(Z)
     print()
 
@@ -44,15 +45,16 @@ with ureg.context('rf'):
     print(q.to('W'))
 
     print()
-    q = (13 * ureg.dBm) + (30 * ureg.dBm)
+    q = (0 * ureg.dBm) + (0 * ureg.dBm)
     print(q)
-    print(q.to('dBm'))
+    print(q.to('dBW'))
+    print(q.to('dBk'))
 
     print()
     q = 20 * ureg.dBm
     print(q)
     print(q.magnitude)
-    res = (10. ** ((q - 30)/10)) * ureg.watt
+    res = (10 ** ((q - 30)/10)) * ureg.watt
     print(res)
 
     print()

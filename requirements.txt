@@ -27,6 +27,7 @@ pyvisa-sim
 # Jupyter #
 jupyter
 jupyterlab
+scipy; sys.platform == 'linux'
 
 # Maths #
 numpy

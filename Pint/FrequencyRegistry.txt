@@ -1,17 +1,23 @@
 # http://earmark.net/gesr/opamp/db_calc.htm
 # https://en.wikipedia.org/wiki/Decibel
-
+# dBpW = dBm; offset: -30
 dBm = [] #	power	dB referenced to a milliwatt
-dBW = [] # power	dB referenced to 1 Watt
+dBW = dBm; offset: 30
+dBk = dBm; offset: 60
+
 
 # Bel = []
 #    = log10 power / power
 # decibel = Bel / 10 = dB- = dB
 
-#dBm = [] = dBW; offset: -30 = dBm
-# dBW = dBm; offset: 30 = dBW
-# dBuW = []
-# dBpW = []
+decibel- = [] = dB-
+
+# dBpW = log10: 1 pW
+# dBµW = log10: 1 µW = dBuW
+# dBm = log10: 1 mW
+# dBW = log10: 1 W
+# dBk = log10: 1 kW
+
 
 # dBV = []
 # dBpV = []
@@ -47,9 +53,7 @@ dBW = [] # power	dB referenced to 1 Watt
 #dBΩ = []
 #VSWR = []
 
-# (ohms=50)
+#       (ohms=50)
 @context frequency = radio = rf = audio = sound = optical = ohmslaw
     [length] <-> [frequency]: speed_of_light / value
-    # [dBm] -> [power]: value ** 2 / ohms
-    # [dBm] -> [dBw]: value - 30
 @end

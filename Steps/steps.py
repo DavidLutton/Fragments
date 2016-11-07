@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 
 def steps(points):
     for step in points:
@@ -12,8 +14,14 @@ print("")
 
 stepper = steps(listofsteps)
 
-print(stepper.next())  # First step
+step = stepper.next()  # First step
+print(step)
 print("")
+
+step = stepper.next()  # Second step
+print(step)
+print("")
+
 
 for step in stepper:  # Remaining steps
     print(step)

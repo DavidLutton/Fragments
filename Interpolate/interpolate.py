@@ -3,10 +3,14 @@
 # import matplotlib.pyplot as plt
 from pprint import pprint
 from scipy.interpolate import UnivariateSpline
+import numpy as np
 
 x = [100e3, 300e3, 1e6, 3e6, 10e6, 30e6, 50e6, 100e6, 300e6, 1000e6, 2000e6, 3000e6, 4200e6]
 y = [95.1, 97.6, 99.2, 98.8, 98.4, 98.2, 98, 98, 97.9, 97.5, 96.6, 95.1, 90.4]
 assert len(x) == len(y)
+# zipped = dict(zip(x, y))
+print(x)
+print(y)
 
 xi = [100e3, 200e3, 300e3, 500e3, 3333e6, 1e6, 3e6, 10e6, 30e6, 50e6, 100e6, 300e6, 400e6,
       500e6, 600e6, 700e6, 800e6, 900e6, 1000e6, 1100e6, 1200e6, 1300e6, 1400e6,
@@ -14,9 +18,9 @@ xi = [100e3, 200e3, 300e3, 500e3, 3333e6, 1e6, 3e6, 10e6, 30e6, 50e6, 100e6, 300
       2400e6, 2500e6, 2600e6, 2700e6, 2800e6, 2900e6, 3000e6, 3100e6, 3200e6,
       3300e6, 3400e6, 3500e6, 3600e6, 3700e6, 3800e6, 3900e6, 4000e6, 4100e6, 4200e6]
 
-xi = []
+# xi = []
 
-# xi = np.arrange(100e6,4200e6,50e6)
+# z = np.arange(100e6, 4200e6, 50e6)
 # xi = [3333.333e6, 2222.222e6, 1111.111e6]
 
 for each in x:
