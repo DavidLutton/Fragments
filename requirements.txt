@@ -1,4 +1,4 @@
-# https://pip.readthedocs.org/en/1.1/requirements.html
+## - [Requirements files pip documentation](https://pip.readthedocs.io/en/1.1/requirements.html)
 pip  # [pip](https://pip.pypa.io/en/stable/)
 
 # URI #
@@ -16,7 +16,7 @@ pandas  # [Python Data Analysis Library](http://pandas.pydata.org/pandas-docs/st
 
 pyserial; sys.platform == 'linux'  # [pySerial](https://pythonhosted.org/pyserial/)
 pyserial==3.0.1; sys.platform == 'win32' # one case for an Win XP
-# python_version < '3.4.4'
+## python_version < '3.4.4'
 
 pyusb  # [PyUSB](http://walac.github.io/pyusb/)
 
@@ -27,7 +27,7 @@ pyvisa-sim  # [PyVISA-sim: Simulator backend for PyVISA](https://pyvisa-sim.read
 # Jupyter #
 jupyter  # [Jupyter Documentation](http://jupyter.readthedocs.io/en/latest/index.html)
 jupyterlab  #
-#  [JupyterLab Tutorial](https://jupyterlab-tutorial.readthedocs.io/en/latest/)
+##  [JupyterLab Tutorial](https://jupyterlab-tutorial.readthedocs.io/en/latest/)
 
 # Maths #
 scipy; sys.platform == 'linux'  # [Scipy](https://docs.scipy.org/doc/)
@@ -44,14 +44,14 @@ comtypes; sys.platform == 'win32'  # [comtypes](http://pythonhosted.org/comtypes
 xlwings; sys.platform == 'win32'  # [xlwings - Make Excel Fly!](http://docs.xlwings.org/en/stable/)
 
 pyautogui  # [PyAutoGUI Cross-platform GUI automation for human beings](https://pyautogui.readthedocs.io/en/latest/)
-#  https://www.youtube.com/watch?v=dZLyfbSQPXI
+## https://www.youtube.com/watch?v=dZLyfbSQPXI
 selenium  # [Selenium - Web Browser Automation](http://docs.seleniumhq.org/)
 
 # Remote Automation #
 paramiko  # [Paramiko SSH connections](http://www.paramiko.org/)
-netmiko; sys.platform == 'linux'  # [Multi-vendor library to simplify Paramiko SSH connections to network devices](https://github.com/ktbyers/netmiko)
-ansible; sys.platform == 'linux'  # [Ansible Documentation](http://docs.ansible.com/)
-
+netmiko  # [Multi-vendor library to simplify Paramiko SSH connections to network devices](https://github.com/ktbyers/netmiko)
+ansible  # [Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management](http://docs.ansible.com/)
+## ; sys.platform == 'linux'
 
 # Linter #
 pydocstyle # [pydocstyle](http://www.pydocstyle.org/en/latest/)
@@ -62,17 +62,18 @@ autopep8  # [autopep8](https://pypi.python.org/pypi/autopep8)
 
 # Code checking #
 pytest  # [pytest: helps you write better programs](http://doc.pytest.org/en/latest/)
-# [Installing and Using plugins — pytest documentation](http://doc.pytest.org/en/latest/plugins.html)
+## [Installing and Using plugins — pytest documentation](http://doc.pytest.org/en/latest/plugins.html)
 pytest-pep8
 pytest-flakes
 pytest-cov
+coverage  # [Coverage.py](http://coverage.readthedocs.io/en/latest/)
 
+# Documentation #
 sphinx  # [Sphinx](http://www.sphinx-doc.org/en/1.4.8/)
 autodoc
 
-coverage  # [Coverage.py](http://coverage.readthedocs.io/en/latest/)
 
-# -r requirements-git.txt
+## -r requirements-git.txt
 # Git #
 -e git+https://github.com/hgrecco/pint.git@master#egg=pint
 -e git+https://github.com/spacetelescope/asdf@master#egg=asdf
