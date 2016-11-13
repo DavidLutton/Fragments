@@ -1,65 +1,81 @@
 # https://pip.readthedocs.org/en/1.1/requirements.html
-pip
+pip  # [pip](https://pip.pypa.io/en/stable/)
 
-# URI # 
-requests
-youtube-dl
-feedparser
+# URI #
+requests  # [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/)
+youtube-dl  # [youtube-dl](https://rg3.github.io/youtube-dl/)
+feedparser  # [feedparser](http://pythonhosted.org/feedparser/)
 matrix-client
 
 # Files #
-openpyxl
-pypdf2
-pandas
+openpyxl  # [openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files](https://openpyxl.readthedocs.io/en/default/)
+pypdf2  # [PyPDF2](https://pythonhosted.org/PyPDF2/)
+pandas  # [Python Data Analysis Library](http://pandas.pydata.org/pandas-docs/stable/)
 
 # Hardware IO #
 
-pyserial; sys.platform == 'linux'
+pyserial; sys.platform == 'linux'  # [pySerial](https://pythonhosted.org/pyserial/)
 pyserial==3.0.1; sys.platform == 'win32' # one case for an Win XP
 # python_version < '3.4.4'
 
-pyusb
+pyusb  # [PyUSB](http://walac.github.io/pyusb/)
 
-pyvisa
-pyvisa-py
-pyvisa-sim
+pyvisa  # [PyVISA: Control your instruments with Python](https://pyvisa.readthedocs.io/en/stable/)
+pyvisa-py  # [PyVISA-py: Pure Python backend for PyVISA](https://pyvisa-py.readthedocs.io/en/latest/)
+pyvisa-sim  # [PyVISA-sim: Simulator backend for PyVISA](https://pyvisa-sim.readthedocs.io/en/latest/)
 
 # Jupyter #
-jupyter
-jupyterlab
-scipy; sys.platform == 'linux'
+jupyter  # [Jupyter Documentation](http://jupyter.readthedocs.io/en/latest/index.html)
+jupyterlab  #
+#  [JupyterLab Tutorial](https://jupyterlab-tutorial.readthedocs.io/en/latest/)
 
 # Maths #
-numpy
-sympy
-pytz
-# scipy lapack blas
+scipy; sys.platform == 'linux'  # [Scipy](https://docs.scipy.org/doc/)
+numpy  # [NumPy](http://www.numpy.org/)
+sympy  # [SymPy](http://docs.sympy.org/latest/index.html)
+pytz  # [pytz - World Timezone Definitions for Python](http://pythonhosted.org/pytz/)
 
 # Plots #
-matplotlib
+matplotlib  # [matplotlib: python plotting](http://matplotlib.org/)
 
 # UI Automation #
 pypiwin32; sys.platform == 'win32'
-comtypes; sys.platform == 'win32'
-xlwings; sys.platform == 'win32'
+comtypes; sys.platform == 'win32'  # [comtypes](http://pythonhosted.org/comtypes/)
+xlwings; sys.platform == 'win32'  # [xlwings - Make Excel Fly!](http://docs.xlwings.org/en/stable/)
 
-# # #
-pydocstyle
-pep8
+pyautogui  # [PyAutoGUI Cross-platform GUI automation for human beings](https://pyautogui.readthedocs.io/en/latest/)
+#  https://www.youtube.com/watch?v=dZLyfbSQPXI
+selenium  # [Selenium - Web Browser Automation](http://docs.seleniumhq.org/)
 
-autopep8
+# Remote Automation #
+paramiko  # [Paramiko SSH connections](http://www.paramiko.org/)
+netmiko; sys.platform == 'linux'  # [Multi-vendor library to simplify Paramiko SSH connections to network devices](https://github.com/ktbyers/netmiko)
+ansible; sys.platform == 'linux'  # [Ansible Documentation](http://docs.ansible.com/)
 
-pytest
+
+# Linter #
+pydocstyle # [pydocstyle](http://www.pydocstyle.org/en/latest/)
+## pep8  #
+pycodestyle  # [pycodestyle](http://pep8.readthedocs.io/en/stable/)
+autopep8  # [autopep8](https://pypi.python.org/pypi/autopep8)
+
+
+# Code checking #
+pytest  # [pytest: helps you write better programs](http://doc.pytest.org/en/latest/)
+# [Installing and Using plugins — pytest documentation](http://doc.pytest.org/en/latest/plugins.html)
 pytest-pep8
 pytest-flakes
 pytest-cov
 
-sphinx
+sphinx  # [Sphinx](http://www.sphinx-doc.org/en/1.4.8/)
 autodoc
 
-coverage
+coverage  # [Coverage.py](http://coverage.readthedocs.io/en/latest/)
 
 # -r requirements-git.txt
 # Git #
 -e git+https://github.com/hgrecco/pint.git@master#egg=pint
 -e git+https://github.com/spacetelescope/asdf@master#egg=asdf
+
+# ## #
+soco; sys.platform == 'linux'  # [SoCo Python control of Sonos](http://docs.python-soco.com/en/stable/)
