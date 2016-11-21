@@ -14,11 +14,11 @@ print("")
 
 stepper = steps(listofsteps)
 
-step = stepper.next()  # First step
+step = next(stepper)  # First step
 print(step)
 print("")
 
-step = stepper.next()  # Second step
+step = next(stepper)  # Second step
 print(step)
 print("")
 
