@@ -3,8 +3,9 @@ import os
 from files import filetypeindir
 from hashes import generate_hash
 
+from deltasum import filetype
 
-files = filetypeindir(".", ".pdf.track")
+files = filetypeindir(".", filetype + ".track")
 
 try:
     for filepath in files:

@@ -3,29 +3,31 @@ import os
 from files import filetypeindir
 from hashes import generate_hash
 
+filetype = ".pdf"
 
-files = filetypeindir(".", ".pdf")
-try:
-    for filepath in files:
-        # print(filepath)
+if __name__ == "__main__":
+    files = filetypeindir(".", filetype)
+    try:
+        for filepath in files:
+            # print(filepath)
 
-        track = filepath + ".track"
-        if os.path.isfile(track) is not True:
-            with open(track, mode='w', encoding='utf-8') as obj:
-                obj.write(generate_hash(filepath))
-        else:
-            with open(track, mode='r', encoding='utf-8') as obj:
-                checksum = obj.read()
-                checksumnow = generate_hash(filepath)
+            track = filepath + ".track"
+            if os.path.isfile(track) is not True:
+                with open(track, mode='w', encoding='utf-8') as obj:
+                    obj.write(generate_hash(filepath))
+            else:
+                with open(track, mode='r', encoding='utf-8') as obj:
+                    checksum = obj.read()
+                    checksumnow = generate_hash(filepath)
 
-                # print(checksum)
-                # print(checksumnow)
+                    # print(checksum)
+                    # print(checksumnow)
 
-                if checksum == checksumnow:
-                    pass
-                    # print(filepath + " has not changed")
-                else:
-                    print(filepath + " has     changed")
+                    if checksum == checksumnow:
+                        pass
+                        # print(filepath + " has not changed")
+                    else:
+                        print(filepath + " has     changed")
 
-except StopIteration:
-    pass
+    except StopIteration:
+        pass
