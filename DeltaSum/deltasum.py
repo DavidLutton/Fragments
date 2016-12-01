@@ -1,4 +1,8 @@
 import os
+import pprint
+pprinter = pprint.PrettyPrinter(indent=4)
+ppprint = pprinter.pprint
+
 
 from files import filetypeindir
 from hashes import generate_hash
@@ -43,6 +47,9 @@ def deltasum(directory, filetype):
 
 if __name__ == "__main__":
     NoChange, New, Changed = deltasum(".", filetype)
-    print(NoChange)
-    print(New)
-    print(Changed)
+    print("No change from first checksum")
+    ppprint(NoChange)
+    print("New files, checksum saved")
+    ppprint(New)
+    print("Changed from first checksum")
+    ppprint(Changed)
