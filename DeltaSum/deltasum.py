@@ -9,7 +9,7 @@ filetype = ".pdf"
 def deltasum(directory, filetype):
     filesNew = []
     filesChanged = []
-    FilesNoChange = []
+    filesNoChange = []
     files = filetypeindir(directory, filetype)
     try:
         for filepath in files:
@@ -30,7 +30,7 @@ def deltasum(directory, filetype):
 
                     if checksum == checksumnow:
                         pass
-                        FilesNoChange.append(filepath)
+                        filesNoChange.append(filepath)
                         # print(filepath + " has not changed")
                     else:
                         filesChanged.append(filepath)
@@ -38,7 +38,7 @@ def deltasum(directory, filetype):
 
     except StopIteration:
         pass
-    return(FilesNoChange, filesNew, filesChanged)
+    return(filesNoChange, filesNew, filesChanged)
 
 
 if __name__ == "__main__":
