@@ -8,7 +8,7 @@ from files import filetypeindir
 from hashes import generate_hash
 
 filetype = ".pdf"
-
+subdirfortrack = "Track"
 
 def deltasum(directory, filetype):
     filesNew = []
@@ -19,7 +19,7 @@ def deltasum(directory, filetype):
         for filepath in files:
             # print(filepath)
 
-            track = filepath + ".track"
+            track = subdirfortrack + os.sep + filepath + ".sha256"
             if os.path.isfile(track) is not True:
                 with open(track, mode='w', encoding='utf-8') as obj:
                     obj.write(generate_hash(filepath))
@@ -38,7 +38,7 @@ def deltasum(directory, filetype):
                         # print(filepath + " has not changed")
                     else:
                         filesChanged.append(filepath)
-                        print(filepath + " has     changed")
+                        #print(filepath + " has     changed")
 
     except StopIteration:
         pass
