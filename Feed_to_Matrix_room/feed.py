@@ -40,7 +40,7 @@ matrix = MatrixHttpApi(host, token=token)
 try:
     # pp(matrix.get_room_state(room))
     for each in entries:
-        msg = str(each.link)
+        msg = each.title + "  " + each.link
         print(msg)
         print(matrix.send_message(room, msg))
         time.sleep(30)
