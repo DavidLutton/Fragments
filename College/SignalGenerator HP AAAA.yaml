@@ -1,0 +1,36 @@
+spec: "1.0"
+devices:
+devices:
+  device 1:
+    eom:
+      ASRL INSTR:
+        q: "\r\n"
+        r: "\n"
+      USB INSTR:
+        q: "\n"
+        r: "\n"
+      TCPIP INSTR:
+        q: "\n"
+        r: "\n"
+      TCPIP SOCKET:
+        q: "\n"
+        r: "\n"
+      GPIB INSTR:
+        q: "\n"
+        r: "\n"
+    error: ERROR
+    dialogues:
+      - q: "*IDN?"
+        r: "HEWLETT-PACKARD,AAAA,,2.0"
+    properties:
+      power:
+        default: -90
+        getter:
+          q: "POWER"
+          r: "{:.1f}"
+        setter:
+          q: ":POWER {:.1f}"
+        specs:
+          min: -90
+          max: 15
+          type: float
