@@ -35,7 +35,6 @@ s.send(bytes("0\x00", 'ascii'))  # Alive to CM3 device
 print(s.recv(60))
 print(s.recv(60))
 print(s.recv(60))
-print(s.recv(60))
 
 print("Pass")
 
@@ -58,8 +57,20 @@ while [True]:
     s.recv(6)  # recive packet with Alive from CM3 device
     # print()
 
-    a = binascii.hexlify(s.recv(60))
-    b = binascii.hexlify(s.recv(60))
-    c = binascii.hexlify(s.recv(60))
-    d = binascii.hexlify(s.recv(60))
-    print(a, b, c, d)
+    a = s.recv(60)
+    b = s.recv(60)
+    c = s.recv(60)
+
+    with open("buffer.log", 'a') as f:
+        f.write("\n")
+        for each in a, b, c:
+            f.write(str(binascii.hexlify(each)) + "\t" + str(each) + "\n")
+            print(str(binascii.hexlify(each)) + "\t" + str(each))
+
+    with open("buffera.log", 'a') as f:
+        f.write("\n")
+        f.write(str(a) + "\t" + str(b) + "\t" + str(c))
+
+    with open("bufferb.log", 'a') as f:
+        f.write("\n")
+        f.write(str(binascii.hexlify(a)) + "\t" + str(binascii.hexlify(b)) + "\t" + str(binascii.hexlify(c)))
