@@ -167,5 +167,5 @@
       "intel-ocl"
       "google-chrome"
     ];
-
+  # https://nixos.wiki/wiki/Unfree_Software
 }
